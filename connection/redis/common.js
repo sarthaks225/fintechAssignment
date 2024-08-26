@@ -1,9 +1,6 @@
 const redis = require("redis");
-// const { Logger } = require('../../libs/logger');
 
 let redisClient = null;
-
-//const { host, port, password } = config.get('redis');
 
 const host = process.env.redisHost;
 const port = process.env.redisPort;

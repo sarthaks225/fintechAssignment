@@ -30,8 +30,7 @@ app.use((err, req, res, next) => {
 app.post("/api/v1/task", async (req, res) => {
   try {
     const { user_id } = await req.body; // Extract user_id from the request body
-    //console.log(req);
-    //console.log(user_id);
+
     if (!user_id) {
       // Validate the user_id
       return res.status(400).send("user_id is required");
@@ -54,6 +53,5 @@ const PORT = process.env.PORT || 3000;
 // Start the server
 server.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-  console.log(process.env.redisHost);
   await RedisManager.connect();
 });
