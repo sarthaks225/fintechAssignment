@@ -20,41 +20,52 @@ The task has a rate limit of 1 task per second and 20 tasks per minute for each 
    npm install redis
    ```
 
+   Install Express:
+
+   ```
+   npm install express
+   ```
+
 3. **Create a .env file:**
 
    In the root directory of the project, create a .env file and add the following content:
 
-   ```
-   redisHost=redisIp
-   redisPort=redisPort
-   redisPassword=redisPassword
-   ```
+```
+
+redisHost=redisIp
+redisPort=redisPort
+redisPassword=redisPassword
+
+```
 
 4. **Start the Server:**
 
-   To start the server, run:
+To start the server, run:
 
-   ```
-   npm start
-   ```
+```
+
+npm start
+
+```
 
 5. **Making a Request:**
 
-   Use the following curl command to make a POST request to process a task:
+Use the following curl command to make a POST request to process a task:
 
-   ```
-   curl "http://localhost:3000/api/v1/task" \
-   -X POST \
-   -d "{\"user_id\" : 104}" \
-   -H "Content-Type: application/json"
+```
 
-   ```
+curl "http://localhost:3000/api/v1/task" \
+ -X POST \
+ -d "{\"user_id\" : 104}" \
+ -H "Content-Type: application/json"
+
+```
 
 6. **Project Structure**
 
-   - `connection/:` Contains connection-related files for Redis.
+- `connection/:` Contains connection-related files for Redis.
 
-   - `index.js:` Main entry point of the application.
+- `index.js:` Main entry point of the application.
 
-   - `logs/:` Folder to store log files (will be ignored by Git, but folder will be present in the repo).
-   - `modules/:` Contains module files for task processing and queueing.
+- `logs/:` Folder to store log files (will be ignored by Git, but folder will be present in the repo).
+- `modules/:` Contains module files for task processing and queueing.
